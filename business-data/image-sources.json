@@ -1,0 +1,14 @@
+{
+  "provider": "Unsplash",
+  "note": "Website photography uses real electronics-related photography from Unsplash. Product cards and category panels load these images directly from the Unsplash image CDN.",
+  "sources": [
+    { "usage": "Hero — person wearing headphones", "url": "https://unsplash.com/s/photos/man-listening-to-music" },
+    { "usage": "Phones", "url": "https://unsplash.com/s/photos/smartphone" },
+    { "usage": "Computers and laptops", "url": "https://unsplash.com/s/photos/laptop" },
+    { "usage": "Tablets", "url": "https://unsplash.com/s/photos/tablet" },
+    { "usage": "Headphones", "url": "https://unsplash.com/s/photos/headphones" },
+    { "usage": "TV and entertainment", "url": "https://unsplash.com/s/photos/smart-tv" },
+    { "usage": "Canal+ / satellite service imagery", "url": "https://unsplash.com/s/photos/satellite-dish" },
+    { "usage": "Routers and connectivity", "url": "https://unsplash.com/s/photos/router" }
+  ]
+}

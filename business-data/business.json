@@ -1,0 +1,37 @@
+{
+  "businessName": "The Blessed Electronics Shop",
+  "focus": [
+    "Smartphones",
+    "Computers",
+    "TV & Audio",
+    "Accessories",
+    "Canal+ Services"
+  ],
+  "currency": "RWF",
+  "languages": [
+    "rw",
+    "en",
+    "fr"
+  ],
+  "ordering": "WhatsApp",
+  "backend": false,
+  "whatsappNumber": "250782898312",
+  "socialMedia": {
+    "facebook": "https://www.facebook.com/",
+    "instagram": "https://www.instagram.com/",
+    "tiktok": "https://www.tiktok.com/"
+  },
+  "note": "Business information supplied for The Blessed Electronics Shop.",
+  "address": "23R3+6QM, Kimisagara Market, KN 20 Ave, Kigali, Rwanda",
+  "phone": "+250 782 898 312",
+  "hours": {
+    "monday_to_saturday": "Open 24 hours",
+    "sunday": "Closed"
+  },
+  "services": [
+    "General electronic appliances",
+    "Electronic materials",
+    "CANAL+ subscriptions",
+    "CANAL+ equipment"
+  ]
+}
