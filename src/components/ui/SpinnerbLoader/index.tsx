@@ -1,9 +1,23 @@
 import React from "react";
-import s from "./SpinnerbLoader.module.css";
-import cn from "clsx";
+import { cn } from "@/lib/utils";
 
-const SpinnerbLoader = ({ className }: any) => {
-  return <span className={cn(s.Loader, {}, className && className)}></span>;
+type SpinnerbLoaderProps = {
+  className?: string;
+};
+
+const SpinnerbLoader = ({
+  className,
+}: SpinnerbLoaderProps) => {
+  return (
+    <span
+      aria-label="Loading"
+      role="status"
+      className={cn(
+        "inline-block h-5 w-5 animate-spin rounded-full border-2 border-black/20 border-t-black",
+        className
+      )}
+    />
+  );
 };
 
 export default SpinnerbLoader;

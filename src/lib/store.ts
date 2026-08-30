@@ -1,6 +1,15 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { persistReducer, persistStore } from "redux-persist";
+import {
+  combineReducers,
+  configureStore,
+} from "@reduxjs/toolkit";
+
+import {
+  persistReducer,
+  persistStore,
+} from "redux-persist";
+
 import storage from "@/components/storage";
+
 import productsReducer from "./features/products/productsSlice";
 import cartsReducer from "./features/carts/cartsSlice";
 
@@ -16,28 +25,28 @@ const rootReducer = combineReducers({
   carts: cartsReducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(
+  persistConfig,
+  rootReducer
+);
 
-export const makeStore = () => {
-  const store = configureStore({
-    reducer: persistedReducer,
-    devTools: import.meta.env.DEV,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({
-        serializableCheck: false,
-      }),
-  });
+export const store = configureStore({
+  reducer: persistedReducer,
 
-  const persistor = persistStore(store);
-  return { store, persistor };
-};
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 
-const store = makeStore().store;
+  devTools: import.meta.env.DEV,
+});
 
-// Infer the type of the store
+export const persistor = persistStore(store);
+
 export type AppStore = typeof store;
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
 
-export { store };
+export type RootState = ReturnType<
+  typeof store.getState
+>;
+
+export type AppDispatch = typeof store.dispatch;

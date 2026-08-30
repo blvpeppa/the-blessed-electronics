@@ -7,7 +7,21 @@ type Props = React.ImgHTMLAttributes<HTMLImageElement> & {
   sizes?: string;
 };
 
-export default function Image({ fill, priority, quality, sizes, ...props }: Props) {
-  const className = `${props.className ?? ""}${fill ? " absolute inset-0 h-full w-full" : ""}`;
-  return <img {...props} className={className} loading={priority ? "eager" : props.loading ?? "lazy"} decoding="async" />;
-}
+const Image = React.forwardRef<HTMLImageElement, Props>(
+  ({ fill, priority, quality, sizes, className, loading, ...props }, ref) => {
+    const mergedClassName = `${className ?? ""}${fill ? " absolute inset-0 h-full w-full" : ""}`;
+    return (
+      <img
+        ref={ref}
+        {...props}
+        className={mergedClassName}
+        loading={priority ? "eager" : loading ?? "lazy"}
+        decoding="async"
+      />
+    );
+  }
+);
+
+Image.displayName = "Image";
+
+export default Image;
